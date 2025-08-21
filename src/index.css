@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Base app layout helpers */
+.app-container {
+  @apply min-h-screen bg-base-200 text-base-content;
+}
+
+.card-centered {
+  @apply container mx-auto px-4 py-8 flex items-center justify-center;
+}
+
+/* Subtle floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes floatDelay {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delay { animation: floatDelay 7s ease-in-out infinite; }
+
+/* Soft grid glow background (optional utility) */
+.grid-glow {
+  /* fallback static color to satisfy CSS linter */
+  background-image: radial-gradient(circle at 1px 1px, rgba(120,120,120,0.25) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Hide horizontal scrollbar for sliders */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
